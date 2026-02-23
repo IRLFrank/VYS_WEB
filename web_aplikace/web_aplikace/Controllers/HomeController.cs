@@ -11,7 +11,12 @@ namespace web_aplikace.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult hypertrophy()
+        {
+            return View();
+        }
+
+        public IActionResult overload()
         {
             return View();
         }
