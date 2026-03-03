@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Profil uživatele";
+}
+
+<div class="profil-container">
+    <h1 class="nadpis">Váš profil</h1>
+    <hr class="cara">
+
+    <div class="profil-content">
+        <div class="profil-card">
+            <h2 class="nadpis2">Informace o uživateli</h2>
+            
+            <div class="profil-info-wrapper">
+                <div class="profil-info-item">
+                    <span class="profil-label">Jméno:</span>
+                    <span class="profil-value">@ViewBag.FirstName</span>
+                </div>
+
+                <div class="profil-info-item">
+                    <span class="profil-label">Příjmení:</span>
+                    <span class="profil-value">@ViewBag.LastName</span>
+                </div>
+
+                <div class="profil-info-item">
+                    <span class="profil-label">Heslo:</span>
+                    <span class="profil-value">@ViewBag.Password</span>
+                </div>
+            </div>
+
+            <div class="profil-actions">
+                <a asp-controller="User" asp-action="Register" class="btn-back">Zpět na registraci</a>
+                <a asp-controller="Home" asp-action="Index" class="btn-home">Domů</a>
+            </div>
+        </div>
+    </div>
+</div>
