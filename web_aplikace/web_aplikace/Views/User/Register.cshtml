@@ -1,5 +1,3 @@
-@model web_aplikace.Models.UserModel
-
 @{
     ViewData["Title"] = "Registrace";
 }
@@ -10,31 +8,36 @@
 
     <div class="register-form-wrapper">
         <form asp-action="Register" method="post" class="register-form">
+
+            @if (ViewBag.Error != null)
+            {
+                <div style="color: #ff9185; margin-bottom: 20px; text-align: center; font-size: 16px;">
+                    @ViewBag.Error
+                </div>
+            }
+
             <div class="form-group">
-                <label asp-for="FirstName" class="form-label">Jméno</label>
-                <input asp-for="FirstName" class="form-input" placeholder="Zadejte vaše jméno" />
-                <span asp-validation-for="FirstName" class="validation-error"></span>
+                <label class="form-label">Jméno</label>
+                <input name="firstName" class="form-input" placeholder="Zadejte vaše jméno" value="@ViewBag.FirstName" />
             </div>
 
             <div class="form-group">
-                <label asp-for="LastName" class="form-label">Příjmení</label>
-                <input asp-for="LastName" class="form-input" placeholder="Zadejte vaše příjmení" />
-                <span asp-validation-for="LastName" class="validation-error"></span>
+                <label class="form-label">Příjmení</label>
+                <input name="lastName" class="form-input" placeholder="Zadejte vaše příjmení" value="@ViewBag.LastName" />
             </div>
 
             <div class="form-group">
-                <label asp-for="Password" class="form-label">Heslo</label>
-                <input asp-for="Password" type="password" class="form-input" placeholder="Zadejte heslo (min. 6 znaků)" />
-                <span asp-validation-for="Password" class="validation-error"></span>
+                <label class="form-label">Heslo</label>
+                <input name="password" type="password" class="form-input" placeholder="Zadejte heslo (min. 6 znaků)" />
             </div>
 
             <div class="form-actions">
                 <button type="submit" class="btn-register">Pokračovat na profil</button>
             </div>
+
+            <div class="login-footer">
+                <p class="login-text">Již máte účet? <a asp-action="Login" class="login-link">Přihlaste se</a></p>
+            </div>
         </form>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

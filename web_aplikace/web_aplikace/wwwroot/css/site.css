@@ -337,3 +337,205 @@ th {
     border-radius: 8px;
     margin-bottom: 15px;
 }
+
+
+
+/* Registrace a Profil - Design */
+
+/* Registraèní stránka */
+.register-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.register-form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.register-form {
+    background: #2c2c2c;
+    padding: 50px 60px;
+    border-radius: 12px;
+    border-left: 5px solid #95d4ff;
+    border-right: 5px solid #ff9185;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    color: #e2e2e2;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    background: #1e1e1e;
+    border: 2px solid #4d4d4d;
+    border-radius: 8px;
+    color: #e2e2e2;
+    box-sizing: border-box;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: #95d4ff;
+    }
+
+    .form-input::placeholder {
+        color: #888;
+    }
+
+.validation-error {
+    display: none;
+}
+
+.form-actions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-register {
+    background: #2c2c2c;
+    color: #e2e2e2;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid #4d4d4d;
+}
+
+    .btn-register:hover {
+        background: #696969;
+        color: #1e1e1e;
+        box-shadow: 0 5px 15px rgba(149, 212, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+
+
+/* Profilová stránka */
+.profil-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.profil-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.profil-card {
+    background: #2c2c2c;
+    padding: 50px 60px;
+    border-radius: 12px;
+    border-left: 5px solid #ff9185;
+    border-right: 5px solid #95d4ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+}
+
+.profil-info-wrapper {
+    margin: 30px 0;
+}
+
+.profil-info-item {
+    background: #1e1e1e;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #4d4d4d;
+}
+
+.profil-label {
+    color: #95d4ff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.profil-value {
+    color: #e2e2e2;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.profil-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-back,
+.btn-home {
+    background: #2c2c2c;
+    color: #e2e2e2;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid #4d4d4d;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    background: #696969;
+    color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(255, 145, 133, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-home:hover {
+    background: #696969;
+    color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(149, 212, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* Login footer */
+.login-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #4d4d4d;
+}
+
+.login-text {
+    color: #bbbbbb;
+    font-size: 16px;
+    margin: 0;
+}
+
+.login-link {
+    color: #95d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .login-link:hover {
+        color: #ff9185;
+        text-decoration: underline;
+    }

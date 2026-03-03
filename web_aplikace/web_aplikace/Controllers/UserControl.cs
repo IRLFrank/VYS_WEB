@@ -13,22 +13,70 @@ namespace web_aplikace.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(UserModel user)
+        public IActionResult Register(string firstName, string lastName, string password)
         {
-            if (ModelState.IsValid)
+            // Ruční validace
+            if (string.IsNullOrEmpty(firstName))
             {
-                TempData["FirstName"] = user.FirstName;
-                TempData["LastName"] = user.LastName;
-                TempData["Password"] = user.Password;
-
-                return RedirectToAction("Profil");
+                ViewBag.Error = "Jméno je povinné";
+                ViewBag.FirstName = firstName;
+                ViewBag.LastName = lastName;
+                return View();
             }
-            return View(user);
+
+            if (string.IsNullOrEmpty(lastName))
+            {
+                ViewBag.Error = "Příjmení je povinné";
+                ViewBag.FirstName = firstName;
+                ViewBag.LastName = lastName;
+                return View();
+            }
+
+            if (string.IsNullOrEmpty(password) || password.Length < 6)
+            {
+                ViewBag.Error = "Heslo musí mít alespoň 6 znaků";
+                ViewBag.FirstName = firstName;
+                ViewBag.LastName = lastName;
+                return View();
+            }
+
+            TempData["FirstName"] = firstName;
+            TempData["LastName"] = lastName;
+            TempData["Password"] = password;
+
+            return RedirectToAction("Profil");
         }
 
+        [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            return View("UserLogin");
+        }
+
+        [HttpPost]
+        public IActionResult Login(string username, string password)
+        {
+            // Ruční validace
+            if (string.IsNullOrEmpty(username))
+            {
+                ViewBag.Error = "Uživatelské jméno je povinné";
+                ViewBag.Username = username;
+                return View("UserLogin");
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                ViewBag.Error = "Heslo je povinné";
+                ViewBag.Username = username;
+                return View("UserLogin");
+            }
+
+            // Zde by byla logika pro ověření přihlášení
+            TempData["FirstName"] = username;
+            TempData["LastName"] = "Random prijmeni";
+            TempData["Password"] = password;
+
+            return RedirectToAction("Profil");
         }
 
         public IActionResult Profil()
