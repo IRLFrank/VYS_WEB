@@ -12,11 +12,40 @@
     margin-left: auto;
 }
 
+.profil-btn {
+    color: #e2e2e2;
+    background: #2c2c2c;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+    .profil-btn:hover {
+        background: #696969;
+        color: #1e1e1e;
+    }
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Tahoma, sans-serif;
     color: #bbbbbb;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
 }
 
 .paticka {
@@ -174,12 +203,11 @@ body {
 
 .Strava {
     font-size: 20px;
-    height: 300px;
-    width: 300px;
-    float: right;
+    min-height: 300px;
+    flex: 1;
     background: #616b6e;
     padding: 20px;
-    margin: 20px;
+    margin: 0;
     border-left: 5px solid #95d4ff;
     border-radius: 12px;
     box-shadow: inset -9px 8px 12px rgba(0, 0, 0, 0.15);
@@ -188,12 +216,11 @@ body {
 
 .chyby {
     font-size: 20px;
-    height: 300px;
-    width: 300px;
-    float: left;
+    min-height: 300px;
+    flex: 1;
     background: #635353;
     padding: 20px;
-    margin: 20px;
+    margin: 0;
     border-radius: 12px;
     border-right: 5px solid #ff9185;
     box-shadow: inset -9px 8px 12px rgba(0, 0, 0, 0.15);
@@ -211,21 +238,17 @@ body {
     border: 2px solid #525252;
     text-align: center;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    width: 1135px;
-    height: 280px;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 1200px;
     border-radius: 12px;
 }
 
 .nadpistabulky {
     text-align: center;
     font-size: 45px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    margin-left: 400px;
-    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 th {
