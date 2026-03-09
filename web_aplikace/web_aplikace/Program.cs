@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using web_aplikace.Data;
+
 namespace web_aplikace
 {
     public class Program
@@ -9,6 +12,19 @@ namespace web_aplikace
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Přidání DbContext
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Přidání Session pro přihlašování
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -17,6 +33,9 @@ namespace web_aplikace
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseRouting();
+
+            // Přidání Session middleware
+            app.UseSession();
 
             app.UseAuthorization();
 

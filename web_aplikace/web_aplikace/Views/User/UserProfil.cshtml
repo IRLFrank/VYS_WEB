@@ -10,29 +10,39 @@
         <div class="profil-card">
             <h2 class="nadpis2">Informace o uživateli</h2>
 
-            <form asp-action="Profil" method="post" class="profil-form">
-                <div class="profil-info-wrapper">
-                    <div class="profil-info-item">
-                        <span class="profil-label">Jméno:</span>
-                        <span class="profil-value">@ViewBag.FirstName</span>
-                    </div>
-
-                    <div class="profil-info-item">
-                        <span class="profil-label">Příjmení:</span>
-                        <span class="profil-value">@ViewBag.LastName</span>
-                    </div>
-
-                    <div class="profil-info-item">
-                        <span class="profil-label">Heslo:</span>
-                        <span class="profil-value">@ViewBag.Password</span>
-                    </div>
+            <div class="profil-info-wrapper">
+                <div class="profil-info-item">
+                    <span class="profil-label">Jméno:</span>
+                    <span class="profil-value">@ViewBag.FirstName</span>
                 </div>
 
-                <div class="profil-actions">
-                    <a asp-controller="User" asp-action="Register" class="btn-back">Zpět na registraci</a>
-                    <a asp-controller="Home" asp-action="Index" class="btn-home">Domů</a>
+                <div class="profil-info-item">
+                    <span class="profil-label">Příjmení:</span>
+                    <span class="profil-value">@ViewBag.LastName</span>
                 </div>
-            </form>
+
+                <div class="profil-info-item">
+                    <span class="profil-label">Přezdívka:</span>
+                    <span class="profil-value">@ViewBag.Username</span>
+                </div>
+
+                <div class="profil-info-item">
+                    <span class="profil-label">Datum registrace:</span>
+                    <span class="profil-value">@ViewBag.RegistrationDate</span>
+                </div>
+
+                <div class="profil-info-item">
+                    <span class="profil-label">Heslo:</span>
+                    <span class="profil-value">@ViewBag.Password</span>
+                </div>
+            </div>
+
+            <div class="profil-actions">
+                <form asp-controller="User" asp-action="Logout" method="post" style="display: inline;">
+                    <button type="submit" class="btn-back">Odhlásit se</button>
+                </form>
+                <a asp-controller="Home" asp-action="Index" class="btn-home">Domů</a>
+            </div>
         </div>
     </div>
 </div>
